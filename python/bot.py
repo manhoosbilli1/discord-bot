@@ -74,8 +74,8 @@ class Bot(AutoShardedBot):
 
 
 client = Bot(
-    command_prefix=when_mentioned_or('felix ', 'Felix '),
-    description='Hi I am Felix!',
+    command_prefix=when_mentioned_or('bot ', 'Bot '),
+    description='Hi I am Bot!',
     max_messages=15000,
     intents=Intents.all(),
     allowed_mentions=AllowedMentions(everyone=False, users=True, roles=True)
@@ -89,7 +89,7 @@ async def on_ready():
     print('\nActive in these guilds/servers:')
     [print(g.name) for g in client.guilds]
     print('\nMain guild:', client.main_guild.name)
-    print('\nFelix-Python started successfully')
+    print('\nBot started successfully')
     return True
 
 
@@ -119,4 +119,4 @@ async def on_message(msg):
 
 
 client.run(client.config['bot_key'])
-print('Felix-Python has exited')
+print('Bot-Python has exited')
